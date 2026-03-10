@@ -128,7 +128,7 @@ mortgageForm.addEventListener('submit', (e) => {
     if (validateForm())
     {
         calculate();
-        // resultsDefault.classList.add('hidden');
-        // resultsState.classList.remove('hidden')
+        resultsDefault.classList.add('hidden');
+        resultsState.classList.remove('hidden')
     }
 });

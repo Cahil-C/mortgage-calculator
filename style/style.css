@@ -133,6 +133,7 @@ body {
 
 .formRow .formGroup {
     flex: 1;
+    min-width: 0; /* Fix the overflow of interest rate input */
 }
 
 /* ERRORS */
