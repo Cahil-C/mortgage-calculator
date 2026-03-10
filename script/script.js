@@ -84,7 +84,7 @@ function calculate()
     const type = document.querySelector('input[name="type"]:checked').value;
 
     const monthlyRate = (annualRate / 100) / 12;
-    const totalMonths = 12;
+    const totalMonths = years * 12;
 
     let monthlyPayment;
     let totalPayment;
