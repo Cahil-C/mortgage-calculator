@@ -72,11 +72,43 @@ function validateForm()
         isValid = false;
     }
 
-    alert(isValid)
     return isValiaisid;
+}
+
+// CALCULATE
+function calculate()
+{
+    const principal = parseFloat(amountInput.value);
+    const years = parseFloat(termInput.value);
+    const annualRate = parseFloat(rateInput.value);
+    const type = document.querySelector('input[name="type"]:checked').value;
+
+    const monthlyRate = (annualRate / 100) / 12;
+    const totalMonths = 12;
+
+    let monthlyPayment;
+    let totalPayment;
+
+    if (type === 'repayment')
+    {
+        monthlyPayment = principal * (monthlyRate * Math.pow(1 + monthlyRate, totalMonths)) / (Math.pow(1 + monthlyRate, totalMonths) - 1);
+        totalPayment = monthlyPayment * totalMonths;
+    }
+    else // Interest Only
+    {
+        monthlyPayment = principal * monthlyRate;
+        totalPayment = monthlyPayment * totalMonths;
+    }
+
+    // Display Results
+    monthlyResult.textContent = '$' + monthlyPayment.toFixed(2).replace(/\B(?=(\d{3}) + (?!\d))/g, ',');
+    totalResult.textContent = '$' + totalPayment.toFixed(2).replace(/\B(?=(\d{3}) + (?!\d))/g, ',')
 }
 
 mortgageForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    validateForm();
-})
+    if (validateForm())
+    {
+        calculate();
+    }
+});
