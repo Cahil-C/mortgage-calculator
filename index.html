@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Mortage Repayment Calculator</title>
+        <title>Mortgage Repayment Calculator</title>
         <link rel="stylesheet" href="./style/style.css">
         <script src="./script/script.js" defer></script>
     </head>
@@ -14,14 +14,63 @@
             <!-- LEFT SIDE - FORM  -->
              <div id="formContainer">
                 <div id="formHeader">
-                    <h1>Mortage Calculator</h1>
+                    <h1>Mortgage Calculator</h1>
                     <button id="clearBtn">Clear All</button>
                 </div>
+
+                <form id="mortgageForm">
+                    <div class="formGroup">
+                        <label for="amount">Mortgage Amount</label>
+                        <div class="inputWrapper">
+                            <span class="inputPrefix">$</span>
+                            <input type="number" id="amount" placeholder="">
+                        </div>
+                        <span class="error-msg" id="amountError">Required*</span>
+                    </div>
+
+                    <div class="formRow">
+                        <div class="formGroup">
+                            <label for="amount">Mortgage Term</label>
+                            <div class="inputWrapper">
+                                <input type="number" id="term" placeholder="">
+                                <span class="inputSuffix">years</span>
+                            </div>
+                            <span class="error-msg" id="termError">Required*</span>
+                        </div>
+
+                        <div class="formGroup">
+                            <label for="amount">Interest Rate</label>
+                            <div class="inputWrapper">
+                                <input type="number" id="rate" placeholder="" step="0.01">
+                                <span class="inputSuffix">%</span>
+                            </div>
+                            <span class="error-msg" id="rateError">Required*</span>
+                        </div>
+
+                        <div class="formGroup">
+                            <label>Mortgage Type</label>
+                            <div id="typeOptions">
+                                <div id="typeOptions">
+                                    <label class="radioOption">
+                                        <input type="radio" name="type" value="repayment">
+                                        Repayment
+                                    </label>
+                                    <label class="radioOption">
+                                        <input type="radio" name="type" value="interestOnly">
+                                        Interest Only
+                                    </label>
+                                </div>
+                                <span class="error-msg" id="typeError">Required*</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" id="calculateBtn">Calculate Repayments</button>
+                </form>
              </div>
 
             <!-- RIGHT SIDE - RESULTS  -->
              <div id="resultsContainer">
-                
+
              </div>
         </div>
     </body>
