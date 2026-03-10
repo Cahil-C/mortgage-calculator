@@ -72,7 +72,7 @@ function validateForm()
         isValid = false;
     }
 
-    return isValiaisid;
+    return isValid;
 }
 
 // CALCULATE
@@ -110,5 +110,7 @@ mortgageForm.addEventListener('submit', (e) => {
     if (validateForm())
     {
         calculate();
+        // resultsDefault.classList.add('hidden');
+        // resultsState.classList.remove('hidden')
     }
 });
