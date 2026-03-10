@@ -105,6 +105,24 @@ function calculate()
     totalResult.textContent = '$' + totalPayment.toFixed(2).replace(/\B(?=(\d{3}) + (?!\d))/g, ',')
 }
 
+// Clear Button
+clearBtn.addEventListener('click', () => 
+{
+    // Reset form fields
+    mortgageForm.reset();
+
+    document.querySelectorAll('.error-msg').forEach(e => e.classList.remove('visible'));
+    document.querySelectorAll('.inputWrapper').forEach(i => i.classList.remove('error'));
+
+    radioOptions.forEach(opt => opt.classList.remove('selected'));
+
+    resultsDefault.classList.remove('hidden');
+    resultsState.classList.add('hidden');
+
+    monthlyResult.textContent = '$0.00';
+    totalResult.textContent = '$0.00';
+})
+
 mortgageForm.addEventListener('submit', (e) => {
     e.preventDefault();
     if (validateForm())
