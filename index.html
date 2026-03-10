@@ -70,8 +70,38 @@
 
             <!-- RIGHT SIDE - RESULTS  -->
              <div id="resultsContainer">
+                <div id="resultsDefault">
+                    <img src="" alt="Empty Calculator Image">
+                    <h2>Results shown here</h2>
+                    <p>
+                        Complete the form and click "calculate repayments"
+                        to see what your monthly payments would be.
+                    </p>
+                </div>
+        
+                <!-- Resuts -->
+                 <h2>Your results</h2>
+                 <p>
+                    Your results are shown below based on the information you provided.
+                    To adjust the results, edit the form and click "calculate payments" again.
+                 </p>
 
+                 <!-- Results Card -->
+                <div id="resultsCard">
+                    <div class="resultRow">
+                        <span class="resultLabel">Your monthly repayments</span>
+                        <span class="resultAmount" id="monthlyResult">$.00</span>
+                    </div>
+
+                    <div class="divider"></div>
+                    <div class="resultRow">
+                        <span class="resultLabel">Total you'll repay over the term</span>
+                        <span class="resultTotal" id="totalResult">$.00</span>
+                    </div>
+                </div>
              </div>
+
+             
         </div>
     </body>
 </html>
