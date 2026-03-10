@@ -15,3 +15,20 @@ const amountError = document.getElementById('amountError');
 const termError = document.getElementById('termError');
 const rateError = document.getElementById('rateError');
 const typeError = document.getElementById('typeError');
+
+// RADIO BUTTON HIGHLIGHT WHEN CLICK
+const radioOptions = document.querySelectorAll('.radioOption');
+
+radioOptions.forEach((option) => 
+{
+    option.addEventListener('click', () =>
+    {
+        // Remove selected class from all options
+        radioOptions.forEach(opt => opt.classList.remove('selected'));
+    
+        // Add selected class to clicked option
+        option.classList.add('selected');
+    });  
+});
+
+radioOptions();
