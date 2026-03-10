@@ -31,4 +31,52 @@ radioOptions.forEach((option) =>
     });  
 });
 
-radioOptions();
+
+// VALIDATE FORM
+function validateForm()
+{
+    let isValid = true;
+
+    document.querySelectorAll('.error-msg').forEach(e => e.classList.remove('visible'));
+    document.querySelectorAll('.inputWrapper').forEach(i => i.classList.remove('error'));
+
+    // CHECK AMOUNT
+    if (!amountInput.value || amountInput.value <= 0)
+    {
+        amountError.classList.add('visible');
+        amountInput.closest('.inputWrapper').classList.add('error')
+        isValid = false;
+    }
+
+    // CHECK TERM
+    if (!termInput.value || termInput.value <= 0)
+    {
+        termError.classList.add('visible');
+        termInput.closest('.inputWrapper').classList.add('error')
+        isValid = false;
+    }
+
+    // CHECK RATE
+    if (!termInput.value || termInput.value <= 0)
+    {
+        rateError.classList.add('visible');
+        rateInput.closest('.inputWrapper').classList.add('error')
+        isValid = false;
+    }
+
+    // CHECK MORTGAGE TYPE
+    const selectedType = document.querySelector('input[name="type"]:checked');
+    if (!selectedType)
+    {
+        rateError.classList.add('visible');
+        isValid = false;
+    }
+
+    alert(isValid)
+    return isValiaisid;
+}
+
+mortgageForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    validateForm();
+})
